@@ -1,28 +1,23 @@
 import 'package:flutter/material.dart';
 import 'screens/splash_screen.dart';
 import 'screens/home_screen.dart';
-import 'screens/recipe_detail_screen.dart';
+import 'screens/recipe_detail_screen.dart' as detail;
 import 'screens/create_recipe_screen.dart';
-
-import 'screens/favorites_screen.dart' as favorites; //si los dejaba sin esta declaración, causaba conflicto el nombre
+import 'screens/favorites_screen.dart' as favorites;
 import 'screens/feedback_screen.dart' as feedback;
-
 import 'screens/explore_recipes_screen.dart';
 import 'screens/barista_screen.dart';
 import 'models/recipe.dart';
 
-void main()
-{
+void main() {
   runApp(CoffeeRecipesApp());
 }
 
-class CoffeeRecipesApp extends StatelessWidget 
-{
+class CoffeeRecipesApp extends StatelessWidget {
   const CoffeeRecipesApp({super.key});
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Coffee Recipes',
@@ -31,7 +26,7 @@ class CoffeeRecipesApp extends StatelessWidget
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.brown).copyWith(
           secondary: Colors.orange,
         ),
-        scaffoldBackgroundColor: Colors.white, // Usa scaffoldBackgroundColor para fondo
+        scaffoldBackgroundColor: Colors.white,
         cardColor: Colors.grey[100],
       ),
       home: SplashScreen(),
@@ -43,17 +38,14 @@ class CoffeeRecipesApp extends StatelessWidget
         '/explore-recipes': (context) => ExploreRecipesScreen(),
         '/barista': (context) => BaristaScreen(),
       },
-      onGenerateRoute: (settings) 
-      {
-        if (settings.name == '/recipe-detail') 
-        {
+      onGenerateRoute: (settings) {
+        if (settings.name == '/recipe-detail') {
           final recipe = settings.arguments as Recipe?;
           if (recipe != null) {
             return MaterialPageRoute(
-              builder: (context) => RecipeDetailScreen(recipe: recipe),
+              builder: (context) => detail.RecipeDetailScreen(recipe: recipe),
             );
-          } else 
-          {
+          } else {
             return MaterialPageRoute(
               builder: (context) => Scaffold(
                 appBar: AppBar(title: const Text('Error')),

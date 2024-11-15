@@ -15,14 +15,13 @@ class _ExploreRecipesScreenState extends State<ExploreRecipesScreen> {
   @override
   void initState() {
     super.initState();
-    _loadRecipes(); // Carga las recetas al iniciar la pantalla
+    _loadRecipes();
   }
 
   Future<void> _loadRecipes() async {
-    // Obtén todas las recetas desde la base de datos
     final allRecipes = await DatabaseService.instance.fetchRecipes();
     setState(() {
-      recipes = allRecipes; // Actualiza la lista de recetas en el estado
+      recipes = allRecipes;
     });
   }
 
@@ -39,11 +38,10 @@ class _ExploreRecipesScreenState extends State<ExploreRecipesScreen> {
                 return ListTile(
                   title: Text(recipe.name),
                   onTap: () {
-                    // Navega a RecipeDetailScreen pasando la receta seleccionada como argumento
                     Navigator.pushNamed(
                       context,
                       '/recipe-detail',
-                      arguments: recipe, // Pasamos el objeto Recipe seleccionado
+                      arguments: recipe,
                     );
                   },
                 );

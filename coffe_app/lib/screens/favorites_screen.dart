@@ -3,40 +3,36 @@ import '../models/recipe.dart';
 import '../services/database_service.dart';
 
 class FavoritesScreen extends StatefulWidget {
-  const FavoritesScreen({super.key});
-
   @override
   _FavoritesScreenState createState() => _FavoritesScreenState();
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
-  List<Recipe> favoriteRecipes = [];
+  List<Recipe> _favoriteRecipes = [];
 
   @override
   void initState() {
     super.initState();
-    loadFavoriteRecipes();
+    _loadFavoriteRecipes();
   }
 
-  Future<void> loadFavoriteRecipes() async {
+  Future<void> _loadFavoriteRecipes() async {
     final allRecipes = await DatabaseService.instance.fetchRecipes();
     setState(() {
-      favoriteRecipes = allRecipes.where((recipe) => recipe.isFavorite).toList();
+      _favoriteRecipes = allRecipes.where((recipe) => recipe.isFavorite).toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Favorites'),
-      ),
-      body: favoriteRecipes.isEmpty
+      appBar: AppBar(title: const Text('Favorites')),
+      body: _favoriteRecipes.isEmpty
           ? const Center(child: Text('No favorite recipes yet!'))
           : ListView.builder(
-              itemCount: favoriteRecipes.length,
+              itemCount: _favoriteRecipes.length,
               itemBuilder: (context, index) {
-                final recipe = favoriteRecipes[index];
+                final recipe = _favoriteRecipes[index];
                 return ListTile(
                   title: Text(recipe.name),
                   onTap: () {
@@ -44,7 +40,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                       context,
                       '/recipe-detail',
                       arguments: recipe,
-                    ).then((_) => loadFavoriteRecipes());
+                    ).then((_) => _loadFavoriteRecipes());
                   },
                 );
               },

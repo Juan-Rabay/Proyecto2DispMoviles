@@ -1,53 +1,61 @@
 {
-    "recipes": [
-      {
-        "name": "Espresso",
-        "ingredients": [
-          { "item": "Café molido", "amount": "18g" },
-          { "item": "Agua", "amount": "30ml" }
-        ],
-        "instructions": [
-          "Calentar la máquina de espresso a 90°C.",
-          "Colocar el café molido en el portafiltro.",
-          "Extraer el café durante 25-30 segundos para obtener 30ml de espresso."
-        ]
-      },
-      {
-        "name": "Cappuccino",
-        "ingredients": [
-          { "item": "Café espresso", "amount": "30ml" },
-          { "item": "Leche", "amount": "120ml" },
-          { "item": "Espuma de leche", "amount": "30ml" }
-        ],
-        "instructions": [
-          "Preparar un espresso.",
-          "Calentar y espumar la leche hasta que tenga una textura suave y cremosa.",
-          "Verter la leche sobre el espresso y agregar una capa de espuma de leche."
-        ]
-      },
-      {
-        "name": "Café Americano",
-        "ingredients": [
-          { "item": "Café espresso", "amount": "30ml" },
-          { "item": "Agua caliente", "amount": "120ml" }
-        ],
-        "instructions": [
-          "Preparar un espresso.",
-          "Añadir agua caliente al espresso para diluirlo y obtener una bebida más suave."
-        ]
-      },
-      {
-        "name": "Café Latte",
-        "ingredients": [
-          { "item": "Café espresso", "amount": "30ml" },
-          { "item": "Leche", "amount": "150ml" }
-        ],
-        "instructions": [
-          "Preparar un espresso.",
-          "Calentar y espumar la leche hasta que esté cremosa.",
-          "Verter la leche caliente sobre el espresso, dejando una pequeña capa de espuma en la parte superior."
-        ]
-      }
-    ]
-  }
-  
+  "recipes": [
+    {
+      "name": "Espresso",
+      "ingredients": [
+        { "item": "Café molido", "amount": "18g" },
+        { "item": "Agua", "amount": "30ml" }
+      ],
+      "instructions": [
+        "Calentar la máquina de espresso a 90°C.",
+        "Colocar el café molido en el portafiltro.",
+        "Extraer el café durante 25-30 segundos para obtener 30ml de espresso."
+      ],
+      "imagePaths": ["assets/espresso.jpg"]
+    },
+    {
+      "name": "Cappuccino",
+      "ingredients": [
+        { "item": "Café espresso", "amount": "30ml" },
+        { "item": "Leche", "amount": "120ml" },
+        { "item": "Espuma de leche", "amount": "30ml" }
+      ],
+      "instructions": [
+        "Preparar un espresso.",
+        "Calentar y espumar la leche hasta que tenga una textura suave y cremosa.",
+        "Verter la leche sobre el espresso y agregar una capa de espuma de leche."
+      ],
+      "imagePaths": ["assets/cappuccino.png"]
+    },
+    {
+      "name": "Latte",
+      "ingredients": [
+        { "item": "Café espresso", "amount": "30ml" },
+        { "item": "Leche", "amount": "150ml" }
+      ],
+      "instructions": [
+        "Preparar un espresso.",
+        "Calentar y espumar la leche hasta que esté cremosa.",
+        "Verter la leche caliente sobre el espresso, dejando una pequeña capa de espuma en la parte superior."
+      ],
+      "imagePaths": ["assets/latte.jpg"]
+    },
+    {
+      "name": "Mocha",
+      "ingredients": [
+        { "item": "Café espresso", "amount": "30ml" },
+        { "item": "Chocolate", "amount": "2 cucharadas" },
+        { "item": "Leche", "amount": "150ml" },
+        { "item": "Crema batida", "amount": "Al gusto" }
+      ],
+      "instructions": [
+        "Preparar un espresso.",
+        "Mezclar el chocolate caliente con el espresso.",
+        "Calentar y espumar la leche.",
+        "Verter la leche sobre la mezcla de chocolate y espresso.",
+        "Agregar crema batida en la parte superior al gusto."
+      ],
+      "imagePaths": ["assets/mocha.png"]
+    }
+  ]
+}

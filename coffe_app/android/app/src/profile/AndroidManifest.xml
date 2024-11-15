@@ -4,4 +4,9 @@
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:enableOnBackInvokedCallback="true">
+        <!-- Your other configurations like activities will go here if needed -->
+    </application>
 </manifest>

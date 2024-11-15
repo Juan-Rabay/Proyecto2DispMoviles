@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
             context,
             'Explore Recipes',
             Icons.coffee,
-            '/explore-recipes', // Cambiado a '/explore-recipes'
+            '/explore-recipes',
           ),
           _buildCard(
             context,
@@ -38,6 +38,12 @@ class HomeScreen extends StatelessWidget {
             Icons.favorite,
             '/favorites',
           ),
+          _buildCard(
+          context,
+          'Barista',
+          Icons.local_cafe,
+          '/barista', // La ruta debe coincidir con la de `main.dart`
+        ),
         ],
       ),
     );

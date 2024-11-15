@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.coffe_app"> <!-- Asegúrate de que el namespace y applicationId en build.gradle coincidan con este valor -->
+    package="cl.jrabay.coffe_app"> <!-- Asegúrate de que el namespace y applicationId en build.gradle coincidan con este valor -->
 
     <application
         android:label="coffe_app"

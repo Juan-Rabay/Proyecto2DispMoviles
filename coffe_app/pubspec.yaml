@@ -1,13 +1,11 @@
 name: coffe_app
 description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none'
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.2
+  sdk: ">=3.5.2 <4.0.0"
 
 dependencies:
   flutter:
@@ -16,30 +14,35 @@ dependencies:
   share_plus: ^10.1.2
   sqflite: ^2.4.1
   url_launcher: ^6.1.10  # Para abrir el correo en la pantalla de retroalimentación
+  image_picker: ^0.8.7+3  # Para seleccionar imágenes de la galería o cámara
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
   flutter_launcher_icons: ^0.9.2  # Para generar el icono de la aplicación
-  flutter_native_splash: ^2.0.5  # Para configurar la pantalla de splash
+  # flutter_native_splash: ^2.0.5  # Para configurar la pantalla de splash
 
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/icon/icon.png            # Icono de la app, asegúrate de tener esta imagen
-    - assets/splash/splash_image.png  # Imagen de splash screen
-    - assets/feedback_questions.json  # Archivo JSON para las preguntas de retroalimentación
+    - assets/icon.png
+    - assets/splash.png
+    - assets/espresso.jpg
+    - assets/cappuccino.png
+    - assets/mocha.png
+    - assets/latte.jpg
+    - assets/feedback_questions.json
+    - assets/recipes.json
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon.png" # Ruta a tu imagen de icono
+  image_path: "assets/icon.png"  # Ruta a tu imagen de icono
 
-flutter_native_splash:
-  color: "#ffffff"
-  image: assets/splash.png
-  android: true
-  ios: true
-
+# flutter_native_splash:
+#  color: "#ffffff"
+#  image: assets/splash.png  
+#  android: true
+#  ios: true
